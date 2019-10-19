@@ -6,6 +6,6 @@ body{margin: 0;}
 .titlebar div{margin-left: 2vh; font-size: 4vh; color: #ffffff;}
 .titlebar img{width: 4vh; height: 4vh; margin-right: 4vh;}
 
-.menu {position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: end;}
+.menu {position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
 .menu div{width: 8vh; height: 8vh; margin-right: 2vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
 .menu img{width: 4vh; height: 4vh;}
