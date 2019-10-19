@@ -9,19 +9,27 @@
 	<body>
 		<div class='titlebar'>
 			<div>Nelly-Sachs-Gymnasium</div>
-			<img src='menu.svg'>
+			<img src='menu.svg' onclick='menu()'>
 		</div>
 
 		<div class='menu'>
-			<div><img src='notifications.svg'></div>
-			<div><img src='assignment_ind.svg'></div>
-			<div><img src='book.svg'></div>
-			<div><img src='event.svg'></div>
-			<div><img src='format_list_numbered.svg'></div>
-			<div><img src='restaurant.svg'></div>
-			<div><img src='group.svg'></div>
-			<div><img src='face.svg'></div>
-			<div><img src='settings_applications.svg'></div>
+			<div onclick='toggle(1, "Aktuelles")'><img src='notifications.svg'></div>
+			<div onclick='toggle(2, "Vertretungsplan")'><img src='assignment_ind.svg'></div>
+			<div onclick='toggle(3, "Klausurplan")'><img src='book.svg'></div>
+			<div onclick='toggle(4, "Termine")'><img src='event.svg'></div>
+			<div onclick='toggle(5, "Zeitraster")'><img src='format_list_numbered.svg'></div>
+			<div onclick='toggle(6, "Mensa")'><img src='restaurant.svg'></div>
+			<div onclick='toggle(7, "Arbeitsgemeinschaften")'><img src='group.svg'></div>
+			<div onclick='toggle(8, "Kollegium")'><img src='face.svg'></div>
+			<div onclick='toggle(9, "Einstellungen")'><img src='settings_applications.svg'></div>
+		</div>
+
+		<div class='page'>
+			Hier gibt es was aktuelles zu lesen!
+		</div>
+
+		<div class='page'>
+			Auch diese Seite sollte interessant sein!
 		</div>
 	</body>
 </html>
