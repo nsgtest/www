@@ -9,17 +9,17 @@
 	to{margin-right: -10vh;}
 }
 
-.visible{animation-name: slidein; animation-duration: 500ms; animation-fill-mode: forwards;}
-.invisible{animation-name: slideout; animation-duration: 500ms; animation-fill-mode: forwards;}
-
 body{margin: 0;}
 
 .titlebar{position: fixed; width: 100vw; height: 8vh; background-color: var(--nsg); display: flex; justify-content: space-between; align-items: center;}
-.titlebar div{margin-left: 2vh; font-size: 4vh; color: #ffffff;}
+.titlebar div{margin-left: 2vh; font-size: 3vh; color: #ffffff;}
 .titlebar img{width: 4vh; height: 4vh; margin-right: 4vh;}
 
 .menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
 .menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
 .menu img{width: 4vh; height: 4vh;}
+.menu div.visible{animation-name: slidein; animation-duration: 300ms; animation-fill-mode: forwards;}
+.menu div.invisible{animation-name: slideout; animation-duration: 300ms; animation-fill-mode: forwards;}
 
 .page{position: absolute; width: 100vw; margin-top: 8vh; background-color: #ffffff; visibility: hidden;}
+.page.visible{visibility: visible;}

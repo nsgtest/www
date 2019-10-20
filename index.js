@@ -1,4 +1,6 @@
-time = 100;
+const time = 30;
+
+current = 0;
 
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
@@ -19,7 +21,12 @@ async function menu() {
 	}
 }
 
-function toggle(icon, title) {
+function toggle(i, title) {
 	menu();
 	document.querySelector('.titlebar div').innerHTML = title;
+
+	pages = document.querySelectorAll('.page');
+	pages[current].classList.remove('visible');
+	pages[i].classList.add('visible');
+	current = i;
 }
