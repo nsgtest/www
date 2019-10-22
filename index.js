@@ -1,11 +1,26 @@
-const time = 30;
+localstorage = window.localStorage;
 
-current = 0;
+window.addEventListener('load', function() {
+	if (localstorage.getItem('theme') == null) {
+		localstorage.setItem('theme', '#ffffff');
+	}
+	document.body.style.setProperty('--theme', localstorage.getItem('theme'));
+})
+
+function theme() {
+	if (localstorage.getItem('theme') == '#ffffff') {
+		localstorage.setItem('theme', '#121212');
+	} else {
+		localstorage.setItem('theme', '#ffffff');
+	}
+	document.body.style.setProperty('--theme', localstorage.getItem('theme'));
+}
 
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+const time = 30;
 async function menu() {
 	icons = document.querySelectorAll('.menu div');
 	for (i = 0; i < icons.length; i++) {
@@ -21,6 +36,7 @@ async function menu() {
 	}
 }
 
+current = 0;
 function toggle(i, title) {
 	menu();
 	document.querySelector('.titlebar div').innerHTML = title;

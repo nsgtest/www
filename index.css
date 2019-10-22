@@ -1,4 +1,4 @@
-:root{--nsg: #00a3da}
+:root{--nsg: #00a3da;}
 
 @keyframes slidein{
 	from{margin-right: -10vh;}
@@ -9,7 +9,7 @@
 	to{margin-right: -10vh;}
 }
 
-body{margin: 0;}
+body{margin: 0; background-color: var(--theme);}
 
 .titlebar{position: fixed; width: 100vw; height: 8vh; background-color: var(--nsg); display: flex; justify-content: space-between; align-items: center;}
 .titlebar div{margin-left: 2vh; font-size: 3vh; color: #ffffff;}
@@ -21,5 +21,7 @@ body{margin: 0;}
 .menu div.visible{animation-name: slidein; animation-duration: 300ms; animation-fill-mode: forwards;}
 .menu div.invisible{animation-name: slideout; animation-duration: 300ms; animation-fill-mode: forwards;}
 
-.page{position: absolute; width: 100vw; margin-top: 8vh; background-color: #ffffff; visibility: hidden;}
+.page{position: absolute; width: 100vw; margin-top: 8vh; visibility: hidden;}
 .page.visible{visibility: visible;}
+.page .theme{display: flex; align-items: center;}
+.page .theme img{width: 8vh; height: 8vh;}

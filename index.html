@@ -12,6 +12,18 @@
 			<img src='menu.svg' onclick='menu()'>
 		</div>	
 
+		<div class='menu'>
+			<div onclick='toggle(0, "Aktuelles")'><img src='notifications.svg'></div>
+			<div onclick='toggle(1, "Vertretungsplan")'><img src='event_busy.svg'></div>
+			<div onclick='toggle(2, "Klausurplan")'><img src='book.svg'></div>
+			<div onclick='toggle(3, "Termine")'><img src='event.svg'></div>
+			<div onclick='toggle(4, "Zeitraster")'><img src='format_list_numbered.svg'></div>
+			<div onclick='toggle(5, "Mensa")'><img src='restaurant.svg'></div>
+			<div onclick='toggle(6, "Arbeitsgemeinschaften")'><img src='group.svg'></div>
+			<div onclick='toggle(7, "Kollegium")'><img src='face.svg'></div>
+			<div onclick='toggle(8, "Einstellungen")'><img src='settings_applications.svg'></div>
+		</div>
+
 		<div class='visible page'>
 			Null!
 		</div>
@@ -45,19 +57,10 @@
 		</div>
 
 		<div class='page'>
-			Acht!
-		</div>
-
-		<div class='menu'>
-			<div onclick='toggle(0, "Aktuelles")'><img src='notifications.svg'></div>
-			<div onclick='toggle(1, "Vertretungsplan")'><img src='event_busy.svg'></div>
-			<div onclick='toggle(2, "Klausurplan")'><img src='book.svg'></div>
-			<div onclick='toggle(3, "Termine")'><img src='event.svg'></div>
-			<div onclick='toggle(4, "Zeitraster")'><img src='format_list_numbered.svg'></div>
-			<div onclick='toggle(5, "Mensa")'><img src='restaurant.svg'></div>
-			<div onclick='toggle(6, "Arbeitsgemeinschaften")'><img src='group.svg'></div>
-			<div onclick='toggle(7, "Kollegium")'><img src='face.svg'></div>
-			<div onclick='toggle(8, "Einstellungen")'><img src='settings_applications.svg'></div>
-		</div>
+			<div class='theme'>
+				<img src='toggle_off.svg' onclick='theme()'>
+				<div>Dark-Theme</div>
+			</div>
+		</div>	
 	</body>
 </html>
