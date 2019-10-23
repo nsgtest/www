@@ -16,7 +16,6 @@ body{margin: 0; background-color: var(--theme);}
 .titlebar svg{width: 4vh; height: 4vh; margin-right: 4vh;}
 
 .menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
-.menu.visible{visibility: visible;}
 .menu.invisible{visibility: hidden;}
 .menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
 .menu div.visible{animation-name: slidein; animation-duration: var(--duration); animation-fill-mode: forwards;}
@@ -26,6 +25,6 @@ body{margin: 0; background-color: var(--theme);}
 .page{position: absolute; width: 100vw; margin-top: 8vh; color: var(--antitheme); visibility: hidden;}
 .page.visible{visibility: visible;}
 .page .theme{display: flex; justify-content: space-between; align-items: center;}
-.page .theme div{font-size: 2vh; margin-left: 2vh;}
+.page .theme div{font-size: 3vh; margin-left: 2vh;}
 .page .theme svg{width: 8vh; height: 8vh; margin-right: 4vh}
 .page .theme svg .invisible{visibility: hidden;}

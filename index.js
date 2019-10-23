@@ -47,14 +47,12 @@ const time = 30;
 const animation = 300;
 async function togglemenu() {
 	menu = document.querySelector('.menu');
-	if (menu.classList.contains('invisible')) {
+	icons = document.querySelectorAll('.menu div');
+
+	if (icons[icons.length - 1].classList.contains('invisible')) {
 		menu.classList.remove('invisible')
-		menu.classList.add('visible');
-	} else {
-		menu.classList.remove('visible');
 	}
 
-	icons = document.querySelectorAll('.menu div');
 	for (i = 0; i < icons.length; i++) {
 		if (icons[icons.length - 1].classList.contains('visible')) {
 			icons[i].classList.remove('visible');
@@ -66,7 +64,7 @@ async function togglemenu() {
 		await sleep(time);
 	}
 
-	if (!menu.classList.contains('visible')) {
+	if (icons[icons.length - 1].classList.contains('invisible')) {
 		await sleep(animation - time);
 		menu.classList.add('invisible');
 	}
