@@ -1,19 +1,42 @@
-localstorage = window.localStorage;
+light = '#e7f6eb';
+dark = '#001e28';
 
+function toggleswitch() {
+	off = document.querySelector('.off');
+	on = document.querySelector('.on');
+	if (localstorage.getItem('theme') == light) {
+		on.classList.remove('invisible');
+		off.classList.add('invisible');
+	} else {
+		off.classList.remove('invisible');
+		on.classList.add('invisible');
+	}
+}
+
+localstorage = window.localStorage;
 window.addEventListener('load', function() {
 	if (localstorage.getItem('theme') == null) {
-		localstorage.setItem('theme', '#ffffff');
+		localstorage.setItem('theme', light);
+		localstorage.setItem('antitheme', dark);
 	}
-	document.body.style.setProperty('--theme', localstorage.getItem('theme'));
-})
+	document.documentElement.style.setProperty('--theme', localstorage.getItem('theme'));
+	document.documentElement.style.setProperty('--antitheme', localstorage.getItem('antitheme'));
 
-function theme() {
-	if (localstorage.getItem('theme') == '#ffffff') {
-		localstorage.setItem('theme', '#121212');
+	toggleswitch();
+});
+
+function toggletheme() {
+	if (localstorage.getItem('theme') == light) {
+		localstorage.setItem('theme', dark);
+		localstorage.setItem('antitheme', light);
 	} else {
-		localstorage.setItem('theme', '#ffffff');
+		localstorage.setItem('theme', light);
+		localstorage.setItem('antitheme', dark);
 	}
-	document.body.style.setProperty('--theme', localstorage.getItem('theme'));
+	document.documentElement.style.setProperty('--theme', localstorage.getItem('theme'));
+	document.documentElement.style.setProperty('--antitheme', localstorage.getItem('antitheme'));
+
+	toggleswitch();
 }
 
 function sleep(ms) {
@@ -21,24 +44,38 @@ function sleep(ms) {
 }
 
 const time = 30;
-async function menu() {
+const animation = 300;
+async function togglemenu() {
+	menu = document.querySelector('.menu');
+	if (menu.classList.contains('invisible')) {
+		menu.classList.remove('invisible')
+		menu.classList.add('visible');
+	} else {
+		menu.classList.remove('visible');
+	}
+
 	icons = document.querySelectorAll('.menu div');
 	for (i = 0; i < icons.length; i++) {
-		if (icons[i].classList.contains('visible')) {
+		if (icons[icons.length - 1].classList.contains('visible')) {
 			icons[i].classList.remove('visible');
 			icons[i].classList.add('invisible');
-			await sleep(time);
 		} else {
 			icons[i].classList.remove('invisible');
 			icons[i].classList.add('visible');
-			await sleep(time);
 		}
+		await sleep(time);
 	}
+
+	if (!menu.classList.contains('visible')) {
+		await sleep(animation - time);
+		menu.classList.add('invisible');
+	}
+
 }
 
 current = 0;
-function toggle(i, title) {
-	menu();
+function togglepage(i, title) {
+	togglemenu();
 	document.querySelector('.titlebar div').innerHTML = title;
 
 	pages = document.querySelectorAll('.page');

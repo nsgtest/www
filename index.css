@@ -1,4 +1,4 @@
-:root{--nsg: #00a3da;}
+:root{--nsg: #00a3da; --duration: 300ms;}
 
 @keyframes slidein{
 	from{margin-right: -10vh;}
@@ -12,16 +12,20 @@
 body{margin: 0; background-color: var(--theme);}
 
 .titlebar{position: fixed; width: 100vw; height: 8vh; background-color: var(--nsg); display: flex; justify-content: space-between; align-items: center;}
-.titlebar div{margin-left: 2vh; font-size: 3vh; color: #ffffff;}
-.titlebar img{width: 4vh; height: 4vh; margin-right: 4vh;}
+.titlebar div{margin-left: 2vh; font-size: 3vh; color: var(--theme);}
+.titlebar svg{width: 4vh; height: 4vh; margin-right: 4vh;}
 
 .menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
+.menu.visible{visibility: visible;}
+.menu.invisible{visibility: hidden;}
 .menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
-.menu img{width: 4vh; height: 4vh;}
-.menu div.visible{animation-name: slidein; animation-duration: 300ms; animation-fill-mode: forwards;}
-.menu div.invisible{animation-name: slideout; animation-duration: 300ms; animation-fill-mode: forwards;}
+.menu div.visible{animation-name: slidein; animation-duration: var(--duration); animation-fill-mode: forwards;}
+.menu div.invisible{animation-name: slideout; animation-duration: var(--duration); animation-fill-mode: forwards;}
+.menu div svg{width: 4vh; height: 4vh;}
 
-.page{position: absolute; width: 100vw; margin-top: 8vh; visibility: hidden;}
+.page{position: absolute; width: 100vw; margin-top: 8vh; color: var(--antitheme); visibility: hidden;}
 .page.visible{visibility: visible;}
-.page .theme{display: flex; align-items: center;}
-.page .theme img{width: 8vh; height: 8vh;}
+.page .theme{display: flex; justify-content: space-between; align-items: center;}
+.page .theme div{font-size: 2vh; margin-left: 2vh;}
+.page .theme svg{width: 8vh; height: 8vh; margin-right: 4vh}
+.page .theme svg .invisible{visibility: hidden;}

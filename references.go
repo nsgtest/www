@@ -115,80 +115,31 @@ func main(){
 		switch os.Args[1]{
 		case "new":
 			if len(os.Args) == 3{
-				fmt.Printf("Creating new references... ")
-
-				var references References
-				references.write(os.Args[2])
-
-				fmt.Printf("Done!\n")
+				newreferences(os.Args[2])
 			} else {
 				help()
 			}
 		case "add":
 			if len(os.Args) == 4{
-				fmt.Printf("Adding reference to references... ")
-
-				references := read(os.Args[2])
-
-				reference := references.validate(os.Args[3], []int{0})
-
-				references = append(references, reference)
-
-				references.write(os.Args[2])
-
-				fmt.Printf("Done!\n")
+				addreference(os.Args[2], os.Args[3])
 			} else {
 				help()
 			}
 		case "remove":
 			if len(os.Args) == 4{
-				fmt.Printf("Removing reference from references... ")
-
-				references := read(os.Args[2]);
-
-				i := references.find(os.Args[3])
-
-				references[i]=references[len(references)-1]
-
-				references[:len(references)-1].write(os.Args[2])
-
-				fmt.Printf("Done!\n")
+				removereference(os.Args[2], os.Args[3])
 			} else {
 				help()
 			}
 		case "update":
 			if len(os.Args) == 4{
-				fmt.Printf("Updating reference in references... ")
-
-				references := read(os.Args[2])
-
-				reference := references.validate(os.Args[3], []int{4, 5, 6})
-
-				i := references.find(os.Args[3])
-
-				references[i] = reference
-
-				references.write(os.Args[2])
-
-				fmt.Printf("Done!\n")
+				updatereference(os.Args[2], os.Args[3])
 			} else {
 				help()
 			}
 		case "list":
 			if len(os.Args) == 3{
-				references := read(os.Args[2])
-
-				if len(references) < 1{
-					fmt.Printf("No reference found in references %v!\n", os.Args[2])
-					panic(nil)
-				}
-
-				references[0].list()
-
-				for _, reference := range references[1:]{
-					fmt.Printf("\n")
-					reference.list()
-				}
+				listreferences(os.Args[2])
 			} else {
 				help()
 			}
@@ -198,6 +149,75 @@ func main(){
 	} else{
 		help()
 	}
+}
+
+func newreferences(name string){
+fmt.Printf("Creating new references... ")
+
+var references References
+references.write(name)
+
+fmt.Printf("Done!\n")
+}
+
+func addreference(name, file string){
+fmt.Printf("Adding reference to references... ")
+
+references := read(name)
+
+reference := references.validate(file, []int{0})
+
+references = append(references, reference)
+
+references.write(name)
+
+fmt.Printf("Done!\n")
+}
+
+func removereference(name, reference string){
+fmt.Printf("Removing reference from references... ")
+
+references := read(name);
+
+i := references.find(reference)
+
+references[i]=references[len(references)-1]
+
+references[:len(references)-1].write(name)
+
+fmt.Printf("Done!\n")
+}
+
+func updatereference(name, file string){
+fmt.Printf("Updating reference in references... ")
+
+references := read(name)
+
+reference := references.validate(file, []int{4, 5, 6})
+
+i := references.find(file)
+
+references[i] = reference
+
+references.write(name)
+
+fmt.Printf("Done!\n")
+}
+
+func listreferences(name string){
+references := read(name)
+
+if len(references) < 1{
+	fmt.Printf("No reference found in references %v!\n", name)
+	panic(nil)
+}
+
+references[0].list()
+
+for _, reference := range references[1:]{
+	fmt.Printf("\n")
+	reference.list()
+}
 }
 
 func help(){
