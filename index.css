@@ -24,7 +24,10 @@ body{margin: 0; background-color: var(--theme);}
 
 .page{position: absolute; width: 100vw; margin-top: 8vh; color: var(--antitheme); visibility: hidden;}
 .page.visible{visibility: visible;}
-.page .theme{display: flex; justify-content: space-between; align-items: center;}
-.page .theme div{font-size: 3vh; margin-left: 2vh;}
-.page .theme svg{width: 8vh; height: 8vh; margin-right: 4vh}
-.page .theme svg .invisible{visibility: hidden;}
+.page div{width: 100vw; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: var(--antitheme); display: flex; flex-direction: column; align-items: center;}
+.page div div{width: 100vw; height: 8vh; border-bottom: none; display: flex; flex-direction: row; justify-content: space-between;}
+.page div div div{font-size: 3vh; margin-left: 2vh;}
+.page div div svg{margin-right: 4vh;}
+.page div div svg .invisible{visibility: hidden;}
+.page div div .toggle{width: 8vh; height: 8vh;}
+.page div div .radio{width: 4vh; height: 4vh;}

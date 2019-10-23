@@ -40,9 +40,45 @@
 		</div>
 
 		<div class='page'>
-			<div class='theme'>
-				<div>Dark-Theme</div>
-				<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='toggletheme()'><g class='off'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></g><g class='on invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></g></svg>
+			<div>
+				<div>
+					<div>Dark-Theme</div>
+					<svg class='toggle' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='toggletheme()'><g class='off'><path d='M0 0h24v24H0z' fill='none'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zM7 15c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></g><g class='on invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M17 7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h10c2.76 0 5-2.24 5-5s-2.24-5-5-5zm0 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z'/></g></svg>
+				</div>
+			</div>
+			<div>
+				<div>
+					<div>5</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(0)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>6</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(1)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>7</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(2)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>8</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(3)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>9</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(4)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>EF</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(5)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>Q1</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(6)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
+				<div>
+					<div>Q2</div>
+					<svg class='radio' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='var(--antitheme)' onclick='setgrade(7)'><g class='unset'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g><g class='set invisible'><path fill='none' d='M0 0h24v24H0z'/><path d='M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z'/></g></svg>
+				</div>
 			</div>
 		</div>	
 

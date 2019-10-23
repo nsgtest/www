@@ -1,6 +1,7 @@
 light = '#e7f6eb';
 dark = '#001e28';
 
+localstorage = window.localStorage;
 function toggleswitch() {
 	off = document.querySelector('.off');
 	on = document.querySelector('.on');
@@ -13,7 +14,17 @@ function toggleswitch() {
 	}
 }
 
-localstorage = window.localStorage;
+function setradio() {
+	visible = document.querySelector('.set:not(.invisible)');
+	if (visible != null) {
+		visible.classList.add('invisible');
+	}
+	
+	if (localstorage.getItem('grade') != null) {
+		document.querySelectorAll('.set')[localstorage.getItem('grade')].classList.remove('invisible');
+	}
+}
+
 window.addEventListener('load', function() {
 	if (localstorage.getItem('theme') == null) {
 		localstorage.setItem('theme', light);
@@ -23,6 +34,7 @@ window.addEventListener('load', function() {
 	document.documentElement.style.setProperty('--antitheme', localstorage.getItem('antitheme'));
 
 	toggleswitch();
+	setradio();
 });
 
 function toggletheme() {
@@ -80,4 +92,14 @@ function togglepage(i, title) {
 	pages[current].classList.remove('visible');
 	pages[i].classList.add('visible');
 	current = i;
+}
+
+function setgrade(i) {
+	if (localstorage.getItem('grade') == i) {
+		localstorage.removeItem('grade');
+		setradio();
+	} else {
+		localstorage.setItem('grade', i);
+		setradio();
+	}
 }
