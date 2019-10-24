@@ -1,4 +1,4 @@
-:root{--nsg: #00a3da; --duration: 300ms;}
+:root{--nsg: #00a3da; --slide: 300ms; --blur: 50ms}
 
 @keyframes slidein{
 	from{margin-right: -10vh;}
@@ -7,6 +7,15 @@
 @keyframes slideout{
 	from{margin-right: 2vh;}
 	to{margin-right: -10vh;}
+}
+
+@keyframes blurin{
+	from{filter: blur(0px);}
+	to{filter: blur(3px);}
+}
+@keyframes blurout{
+	from{filter: blur(3px);}
+	to{filter: blur(0px);}
 }
 
 body{margin: 0; background-color: var(--theme);}
@@ -18,12 +27,13 @@ body{margin: 0; background-color: var(--theme);}
 .menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
 .menu.invisible{visibility: hidden;}
 .menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
-.menu div.visible{animation-name: slidein; animation-duration: var(--duration); animation-fill-mode: forwards;}
-.menu div.invisible{animation-name: slideout; animation-duration: var(--duration); animation-fill-mode: forwards;}
+.menu div.visible{animation-name: slidein; animation-duration: var(--slide); animation-fill-mode: forwards;}
+.menu div.invisible{animation-name: slideout; animation-duration: var(--slide); animation-fill-mode: forwards;}
 .menu div svg{width: 4vh; height: 4vh;}
 
 .page{position: absolute; width: 100vw; margin-top: 8vh; color: var(--antitheme); visibility: hidden;}
-.page.visible{visibility: visible;}
+.page.visible{visibility: visible; animation-name: blurout; animation-duration: var(--blur); animation-fill-mode: forwards;}
+.page.visible.blur{animation-name: blurin; animation-duration: var(--blur); animation-fill-mode: forwards;}
 .page div{width: 100vw; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: var(--antitheme); display: flex; flex-direction: column; align-items: center;}
 .page div div{width: 100vw; height: 8vh; border-bottom: none; display: flex; flex-direction: row; justify-content: space-between;}
 .page div div div{font-size: 3vh; margin-left: 2vh;}

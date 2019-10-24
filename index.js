@@ -56,13 +56,21 @@ function sleep(ms) {
 }
 
 const time = 30;
-const animation = 300;
+const slide = 300;
 async function togglemenu() {
 	menu = document.querySelector('.menu');
 	icons = document.querySelectorAll('.menu div');
+	page = document.querySelector('.page.visible');
 
 	if (icons[icons.length - 1].classList.contains('invisible')) {
 		menu.classList.remove('invisible')
+		
+	}
+
+	if (page.classList.contains('blur')) {
+		page.classList.remove('blur');
+	} else {
+		page.classList.add('blur');
 	}
 
 	for (i = 0; i < icons.length; i++) {
@@ -77,7 +85,7 @@ async function togglemenu() {
 	}
 
 	if (icons[icons.length - 1].classList.contains('invisible')) {
-		await sleep(animation - time);
+		await sleep(slide - time);
 		menu.classList.add('invisible');
 	}
 
