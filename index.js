@@ -64,22 +64,16 @@ async function togglemenu() {
 
 	if (icons[icons.length - 1].classList.contains('invisible')) {
 		menu.classList.remove('invisible')
-		
-	}
-
-	if (page.classList.contains('blur')) {
-		page.classList.remove('blur');
-	} else {
 		page.classList.add('blur');
+	} else {
+		page.classList.remove('blur');
 	}
 
 	for (i = 0; i < icons.length; i++) {
-		if (icons[icons.length - 1].classList.contains('visible')) {
-			icons[i].classList.remove('visible');
-			icons[i].classList.add('invisible');
-		} else {
+		if (icons[icons.length - 1].classList.contains('invisible')) {
 			icons[i].classList.remove('invisible');
-			icons[i].classList.add('visible');
+		} else {
+			icons[i].classList.add('invisible');
 		}
 		await sleep(time);
 	}

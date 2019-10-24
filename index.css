@@ -26,8 +26,7 @@ body{margin: 0; background-color: var(--theme);}
 
 .menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
 .menu.invisible{visibility: hidden;}
-.menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); display: flex; justify-content: center; align-items: center;}
-.menu div.visible{animation-name: slidein; animation-duration: var(--slide); animation-fill-mode: forwards;}
+.menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); animation-name: slidein; animation-duration: var(--slide); animation-fill-mode: forwards; display: flex; justify-content: center; align-items: center;}
 .menu div.invisible{animation-name: slideout; animation-duration: var(--slide); animation-fill-mode: forwards;}
 .menu div svg{width: 4vh; height: 4vh;}
 
