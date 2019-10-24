@@ -11,10 +11,10 @@
 
 @keyframes blurin{
 	from{filter: blur(0px);}
-	to{filter: blur(3px);}
+	to{filter: blur(5px);}
 }
 @keyframes blurout{
-	from{filter: blur(3px);}
+	from{filter: blur(5px);}
 	to{filter: blur(0px);}
 }
 
@@ -24,9 +24,9 @@ body{margin: 0; background-color: var(--theme);}
 .titlebar div{margin-left: 2vh; font-size: 3vh; color: var(--theme);}
 .titlebar svg{width: 4vh; height: 4vh; margin-right: 4vh;}
 
-.menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-end;}
+.menu{position: fixed; width: 100vw; height: 92vh; margin-top: 8vh; overflow-x: hidden; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end;}
 .menu.invisible{visibility: hidden;}
-.menu div{width: 8vh; height: 8vh; margin-right: -10vh; border-radius: 50%; background-color: var(--nsg); animation-name: slidein; animation-duration: var(--slide); animation-fill-mode: forwards; display: flex; justify-content: center; align-items: center;}
+.menu div{width: 8vh; height: 8vh; margin-right: -10vh; margin-top: 2vh; border-radius: 50%; background-color: var(--nsg); animation-name: slidein; animation-duration: var(--slide); animation-fill-mode: forwards; display: flex; justify-content: center; align-items: center; flex-shrink: 0;}
 .menu div.invisible{animation-name: slideout; animation-duration: var(--slide); animation-fill-mode: forwards;}
 .menu div svg{width: 4vh; height: 4vh;}
 
