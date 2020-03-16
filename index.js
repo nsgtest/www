@@ -45,7 +45,7 @@ function setgrade(i) {
 	document.querySelectorAll('.set')[window.localStorage.getItem('grade')].classList.remove('invisible');
 }
 
-window.addEventListener('load', function() {
+window.onload = function() {
 	if (window.localStorage.getItem('theme') == null || window.localStorage.getItem('theme') == theme) {
 		light();
 	} else {
@@ -55,10 +55,14 @@ window.addEventListener('load', function() {
 	if (window.localStorage.getItem('grade') != null) {
 		setgrade(window.localStorage.getItem('grade'));
 	}
-});
+
+	if (window.localStorage.getItem('username') != null && window.localStorage.getItem('password') != null) {
+		login(localStorage.getItem('username'), localStorage.getItem('password'));
+	}
+};
 
 function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
+	return new Promise(resolve => window.setTimeout(resolve, ms));
 }
 
 async function togglemenu() {
@@ -101,7 +105,67 @@ function togglepage(i, title) {
 	page = i;
 }
 
-function login() {
+function warning() {
+	document.querySelector('.loading').classList.add('invisible');
+	document.querySelector('.warning').classList.remove('invisible');
+
+	window.setTimeout(function() {
+		document.querySelector('.warning').classList.add('invisible');
+		document.querySelector('.login').classList.remove('invisible');
+	}, 3000);
+}
+
+function done() {
+	document.querySelector('.loading').classList.add('invisible');
+	document.querySelector('.done').classList.remove('invisible');
+
+	window.setTimeout(function() {
+		document.querySelector('.done').classList.add('invisible');
+		document.querySelector('.remove').classList.remove('invisible');
+	}, 3000);
+}
+
+async function login(username, password) {
 	document.querySelector('.login').classList.add('invisible');
 	document.querySelector('.loading').classList.remove('invisible');
+
+	if (username == 'schueler') {
+		url = 'https://vertretung.nellysachs.de/pausenhalle/'
+	} else if (username == 'lehrer') {
+		url = 'https://vertretung.nellysachs.de/lehrerzimmer/'
+	} else {
+		warning();
+		return
+	}
+
+	xmlhttprequest = new XMLHttpRequest();	
+	xmlhttprequest.onload = function() {
+		window.localStorage.setItem('username', username);
+		window.localStorage.setItem('password', password);	
+
+		done();
+
+		table = xmlhttprequest.responseXML.querySelector('.mon_list');
+
+		array = new Array();
+		for (i = 1; i < table.rows.length; i++) {
+			object = new Object();
+			for (j = 0; j < table.rows[j].cells.length; j++) {
+				object[table.rows[0].cells[j].innerHTML] = table.rows[i].cells[j].innerHTML;
+			}
+			array.push(object);
+		}
+	};
+	xmlhttprequest.onerror = function() {
+		window.localStorage.removeItem('username');
+		window.localStorage.removeItem('password');
+
+		warning();
+		return
+	};
+	xmlhttprequest.open('GET', new URL('heute/subst_001.htm', url).toString(), true);
+	xmlhttprequest.setRequestHeader('Authorization', 'Basic ' + window.btoa(username + ':' + password));
+	xmlhttprequest.withCredentials = true;
+	xmlhttprequest.responseType = 'document';
+	xmlhttprequest.send();
 }
