@@ -4,7 +4,7 @@ theme = '#e7f6eb';
 antitheme = '#001e28';
 
 const time = 30;
-const slide = 300;
+const slide = getComputedStyle(document.documentElement).getPropertyValue('--slide').replace(/\D/g,'');
 
 function settheme() {
 	document.documentElement.style.setProperty('--theme', window.localStorage.getItem('theme'));
@@ -16,7 +16,7 @@ function light() {
 	window.localStorage.setItem('antitheme', antitheme);
 
 	document.querySelector('.off').classList.remove('invisible');
-	document.querySelector('.on').classList.add('invisible');	
+	document.querySelector('.on').classList.add('invisible');
 
 	settheme();
 }
@@ -70,7 +70,7 @@ async function togglemenu() {
 	menudiv = document.querySelectorAll('.menu div');
 	pagevisible = document.querySelector('.page.visible');
 
-	if (menudiv[menudiv.length - 1].classList.contains('invisible')) {
+	if (menudiv[0].classList.contains('invisible') && menudiv[menudiv.length - 1].classList.contains('invisible')) {
 		menu.classList.remove('invisible');
 		pagevisible.classList.add('blur');
 	} else {
@@ -86,8 +86,8 @@ async function togglemenu() {
 		await sleep(time);
 	}
 
-	if (menudiv[menudiv.length - 1].classList.contains('invisible')) {
-		await sleep(slide - time);
+	await sleep(slide - time);
+	if (menudiv[0].classList.contains('invisible') && menudiv[menudiv.length - 1].classList.contains('invisible')) {
 		menu.classList.add('invisible');
 	}
 
@@ -138,10 +138,10 @@ async function login(username, password) {
 		return
 	}
 
-	xmlhttprequest = new XMLHttpRequest();	
+	xmlhttprequest = new XMLHttpRequest();
 	xmlhttprequest.onload = function() {
 		window.localStorage.setItem('username', username);
-		window.localStorage.setItem('password', password);	
+		window.localStorage.setItem('password', password);
 
 		done();
 
