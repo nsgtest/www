@@ -73,7 +73,8 @@ async function togglemenu() {
 	if (menudiv[0].classList.contains('invisible') && menudiv[menudiv.length - 1].classList.contains('invisible')) {
 		menu.classList.remove('invisible');
 		pagevisible.classList.add('blur');
-	} else {
+	}
+	if (!menudiv[0].classList.contains('invisible') && !menudiv[menudiv.length - 1].classList.contains('invisible')){
 		pagevisible.classList.remove('blur');
 	}
 
